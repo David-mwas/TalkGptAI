@@ -45,6 +45,9 @@ export default function Home() {
     </div>
     
     </div>
+    <p className='absolute bottom-5 text-sm text-gray-500 '>
+      Free Research Preview chatGpt may produce inaccurate information about people, places, or facts
+    </p>
   </div>
     
 )
