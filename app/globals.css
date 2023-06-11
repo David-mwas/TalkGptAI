@@ -14,7 +14,8 @@
 }
 
 body {
-  color: black
+  color: black;
+  background:red;
 }
 @tailwind base;
 @tailwind components;
@@ -22,7 +23,7 @@ body {
 
 @layer components{
   .infoText{
-    @apply p-4 bg-gray-700/50 rounded-lg max-w-[300px]
+    @apply p-4 bg-gray-700/50 rounded-lg w-[100%]
   }
   .chatRow{
     @apply rounded-lg  px-5 text-sm flex items-center justify-center space-x-2 hover:bg-[#141e30/4] cursor-pointer text-gray-300 transition-all duration-200 ease-out

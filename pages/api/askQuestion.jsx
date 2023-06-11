@@ -1,6 +1,6 @@
 import admin from "firebase-admin"
 import query from "@/lib/queryApi";
-import svg from "../../app/favicon.ico"
+
 import { adminDB } from "@/firebaseAdmin";
 export default async function handler(req, res) {
 
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         user:{
             _id:"ChatGPT",
             name:"ChatGPT",
-            avatar:{svg}
+            avatar:"voicegpt.jpeg"
         }
     }
 

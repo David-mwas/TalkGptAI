@@ -11,15 +11,17 @@ import Main from './Main'
 function ChatInput({chatId}) {
    const {text} = useSpeechRecognition();
   const [prompt,setPrompt] = useState();
+  const [textValue,setTextValue] = useState(text);
   const {data:session} = useSession()
-
+  console.log(text)
 // use swr for models
  const model = "gpt-3.5-turbo"
-
+  var input;
   const sendMessage = async (e)=>{
     e.preventDefault();
-    if (!prompt) return;
-    const input = prompt.trim();
+    // alert("he")
+    // if (!prompt || !text ) return;
+    var input = prompt?.trim() || textValue;
     setPrompt("");
 
     const message = {
@@ -56,24 +58,26 @@ function ChatInput({chatId}) {
           id:notification,
         })
       })
+    console.log(input)
   }
   return (
     <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm ring-none">
     
       <form 
-      onSubmit={sendMessage}
+        onSubmit={(e) => { e.preventDefault() }}
       className='p-5 space-x-5 flex'>
         <input
         disabled={!session}
         className='focus:outline-none bg-transparent flex-1 disabled:cursor-not-allowed disabled:text-gray-300'
-        value={prompt}
+          value={prompt }
         onChange={(e)=>setPrompt(e.target.value)} 
         type="text"
         placeholder="Type your text here..."
         />
          <Main/>
         <button 
-        disabled={!prompt || !session}
+         onClick={sendMessage}
+        disabled={!prompt ||!textValue}
         className="bg-[#0367a6] hover:opacity-50 text-white font-bold px-4 rounded py-2 disabled:cursor-not-allowed disabled:text-gray-300"
         type='submit'>
           <PaperAirplaneIcon

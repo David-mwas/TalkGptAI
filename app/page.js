@@ -1,16 +1,18 @@
 
 import {BoltIcon, ExclamationTriangleIcon, SunIcon} from '@heroicons/react/24/outline'
+import { FaGithub, FaMicrophoneAlt } from 'react-icons/fa'
 export default function Home() {
   return (
-    <div className='flex flex-col items-center text-white px-2 justify-center h-screen'>
-    <h1 className='text-5xl font-bold mb-5 tracking-[2px]'>TalkGpt</h1>
-    <p className='mb-10 uppercase text-gray-500 tracking-[5px] text-sm'>Your voice your command</p>
-    <div className='flex space-x-2 text-center text-sm'> 
+    <div className='flex relative flex-col text-white px-2 justify-center  md:h-screen  overflow-y-auto items-center'>
+     
+    <h1 className='text-5xl flex space-x-2 font-bold mb-5 mt-10 md:mt-0 tracking-[2px]'>TalkGpt<FaMicrophoneAlt className=' animate-bounce text-[#0367a6]'/></h1>
+    <p className='mb-10 uppercase text-gray-500 tracking-[5px] text-sm text-center'>Your voice your command</p>
+    <div className='flex flex-col md:flex-row space-x-2 text-center text-sm  overflow-y-autor'> 
     
       <div>
         <div className='flex flex-col items-center mb-5'>
            {/* sun icon */}
-           <SunIcon className="h-6 w-6"/>
+           <SunIcon className="h-6 w-6 animate-pulse text-[#0367a6]"/>
            <h2>Examples</h2>
          </div>
        <div className='space-y-2'>
@@ -19,10 +21,10 @@ export default function Home() {
          <p className='infoText'>"What is the color of the sun?"</p>
        </div>
     </div>
-      <div>
+      <div className='mt-6 mb-6 md:mt-0 md:mb-0 ' >
         <div className='flex flex-col items-center mb-5'>
            {/* sun icon */}
-           <BoltIcon className="h-6 w-6"/>
+           <BoltIcon className="h-6 w-6 animate-pulse text-[#0367a6]"/>
            <h2>Capabilities</h2>
          </div>
        <div className='space-y-2'>
@@ -34,7 +36,7 @@ export default function Home() {
       <div>
         <div className='flex flex-col items-center mb-5'>
            {/* sun icon */}
-           <ExclamationTriangleIcon className="h-6 w-6"/>
+           <ExclamationTriangleIcon className="h-6 w-6 animate-pulse text-[#0367a6]"/>
            <h2>Limitations</h2>
          </div>
        <div className='space-y-2'>
@@ -45,9 +47,11 @@ export default function Home() {
     </div>
     
     </div>
-    <p className='absolute bottom-5 text-sm text-gray-500 '>
-      Free Research Preview chatGpt may produce inaccurate information about people, places, or facts
+   
+      <p className='mt-[30px] md:absolute md:bottom-1 text-sm text-gray-500 text-center bg-gray-700 py-4 px-8 md:px-[40px] lg:px-[206px]'>
+      Free Research Preview chatGpt may produce inaccurate information about people, places, or facts <br/> <span className='flex space-x-2 gap-3 text-center items-center justify-center'>&copy; CopyRight 2023 <FaGithub  className=' h-6 w-6 text-[#0367a6]'/>David-mwas , <FaGithub className=' h-6 w-6 text-[#0367a6]'/>Fiona Githaiga</span>
     </p>
+  
   </div>
     
 )

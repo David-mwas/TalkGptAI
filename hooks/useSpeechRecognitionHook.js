@@ -16,10 +16,11 @@ const useSpeechRecognition = () => {
         if (!recognition) return;
 
         recognition.onresult = (event) => {
-            console.log(event);
+            // console.log(event);
             setText(event.results[0][0].transcript)
+            setIsListening(false);
             recognition.stop();
-           setIsListening(false);
+            stopListening();
         }
     
     }, []);

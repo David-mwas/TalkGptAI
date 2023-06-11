@@ -1,3 +1,4 @@
+// "use client";
 import './globals.css'
 import { Inter } from 'next/font/google'
 import SideBar from '@/components/SideBar'
@@ -8,6 +9,7 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import Login from '@/components/Login'
 import ClientProvider from '@/components/ClientProvider'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,24 +19,25 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await getServerSession(authOptions)
-  // console.log(session.user.image)
+  
   return (
     <html lang="en">
-     <body className="">
+     <body className=" bg-green-500  h-[100vh] overflow-y-auto">
       <SessionProvider session={session}>
         {!session ? (
           <Login />
         ):(
           <div className='flex'>
           {/* sidebar */}
-         <div className='bg-gray-700 max-w-xs h-screen  md:min-w-[15rem]'>
-         <SideBar />
+                <div className='bg-gray-700 max-w-xs h-[100%]  md:min-w-[15rem]'>
+                 
+                  <SideBar  />
          </div>
           {/* client notifier */}
           
           <ClientProvider/>
   
-          <div className='bg-[#141e30] flex-1'>
+          <div className='bg-[#141e30] flex-1  overflow-y-auto'>
             {children}
           </div>
          </div>
