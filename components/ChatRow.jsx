@@ -27,14 +27,14 @@ function ChatRow({id}) {
       router.replace("/")
     }
   return (
-    <Link href={`/chat/${id}`} className={`chatRow justify-center p-2 m-[4px] ${active && "bg-gray-700/50"}`}>
-        <ChatBubbleLeftIcon className='h-5 w-5 text-[#11A37F]'/>
+    <Link href={`/chat/${id}`} className={`chatRow justify-center p-2 m-[4px] ${active && "bg-[#141e30]"}`}>
+        <ChatBubbleLeftIcon className='h-5 w-5 text-[#0367a6]'/>
         <p className="flex-1 hidden md:inline-flex truncate">
             {messages?.docs[messages.docs.length - 1]?.data().text || "New Chat" }
         </p>
         <TrashIcon 
         onClick={removeChat}
-        className='h-5 w-5 text-gray-700 hover:text-red-700'
+        className='h-5 w-5 text-gray-400 hover:text-red-700'
         />
     </Link>
   )

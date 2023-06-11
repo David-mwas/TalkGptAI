@@ -18,7 +18,7 @@ function Chat({chatId}) {
     {messages?.empty && (
       <>
       <p className='mt-10 text-center text-white'>Type a prompt in below to get started!</p>
-      <ArrowDownCircleIcon className='h-10 w-10 mx-auto mt-5 text-[#11A37F] animate-bounce'/>
+      <ArrowDownCircleIcon className='h-10 w-10 mx-auto mt-5 text-[#0367a6] animate-bounce'/>
       </>
     )}
        {messages?.docs.map((message)=>(

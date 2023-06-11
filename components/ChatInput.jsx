@@ -3,10 +3,13 @@ import { db } from '@/firebase';
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
+import useSpeechRecognition from '../hooks/useSpeechRecognitionHook'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
+import Main from './Main'
 
 function ChatInput({chatId}) {
+   const {text} = useSpeechRecognition();
   const [prompt,setPrompt] = useState();
   const {data:session} = useSession()
 
@@ -56,6 +59,7 @@ function ChatInput({chatId}) {
   }
   return (
     <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm ring-none">
+    
       <form 
       onSubmit={sendMessage}
       className='p-5 space-x-5 flex'>
@@ -67,9 +71,10 @@ function ChatInput({chatId}) {
         type="text"
         placeholder="Type your text here..."
         />
+         <Main/>
         <button 
         disabled={!prompt || !session}
-        className="bg-[#11A37F] hover:opacity-50 text-white font-bold px-4 rounded py-2 disabled:cursor-not-allowed disabled:text-gray-300"
+        className="bg-[#0367a6] hover:opacity-50 text-white font-bold px-4 rounded py-2 disabled:cursor-not-allowed disabled:text-gray-300"
         type='submit'>
           <PaperAirplaneIcon
           className='h-4 w-4 -rotate-45' 

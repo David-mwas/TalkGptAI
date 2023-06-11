@@ -27,14 +27,14 @@ export default async function RootLayout({ children }) {
         ):(
           <div className='flex'>
           {/* sidebar */}
-         <div className='bg-[#202123] max-w-xs h-screen  md:min-w-[15rem]'>
+         <div className='bg-gray-700 max-w-xs h-screen  md:min-w-[15rem]'>
          <SideBar />
          </div>
           {/* client notifier */}
           
           <ClientProvider/>
   
-          <div className='bg-[#343541] flex-1'>
+          <div className='bg-[#141e30] flex-1'>
             {children}
           </div>
          </div>
