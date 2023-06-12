@@ -16,12 +16,11 @@ function ChatInput({chatId}) {
   console.log(text)
 // use swr for models
  const model = "gpt-3.5-turbo"
-  var input;
   const sendMessage = async (e)=>{
     e.preventDefault();
     // alert("he")
     // if (!prompt || !text ) return;
-    var input = prompt?.trim() || text;
+    const input = prompt?.trim() || text;
     setPrompt("");
 
     const message = {
@@ -58,7 +57,7 @@ function ChatInput({chatId}) {
           id:notification,
         })
       })
-    console.log(input)
+    // console.log(input)
   }
   return (
     <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm ring-none">
