@@ -11,7 +11,7 @@ import Main from './Main'
 function ChatInput({chatId}) {
    const {text} = useSpeechRecognition();
   const [prompt,setPrompt] = useState();
-  const [textValue,setTextValue] = useState(text);
+  // const [textValue,setTextValue] = useState(text);
   const {data:session} = useSession()
   console.log(text)
 // use swr for models
@@ -21,7 +21,7 @@ function ChatInput({chatId}) {
     e.preventDefault();
     // alert("he")
     // if (!prompt || !text ) return;
-    var input = prompt?.trim() || textValue;
+    var input = prompt?.trim() || text;
     setPrompt("");
 
     const message = {
