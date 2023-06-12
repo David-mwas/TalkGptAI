@@ -77,7 +77,7 @@ function ChatInput({chatId}) {
          <Main/>
         <button 
          onClick={sendMessage}
-        disabled={!prompt ||!textValue}
+        disabled={!session}
         className="bg-[#0367a6] hover:opacity-50 text-white font-bold px-4 rounded py-2 disabled:cursor-not-allowed disabled:text-gray-300"
         type='submit'>
           <PaperAirplaneIcon
