@@ -1,6 +1,5 @@
 import admin from "firebase-admin"
 import query from "@/lib/queryApi";
-
 import { adminDB } from "@/firebaseAdmin";
 export default async function handler(req, res) {
 
