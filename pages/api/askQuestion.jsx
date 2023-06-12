@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         user:{
             _id:"ChatGPT",
             name:"ChatGPT",
-            avatar:"voicegpt.jpeg"
+            avatar:"/voicegpt.png"
         }
     }
 
