@@ -49,7 +49,7 @@ export default function Home() {
     </div>
    
       <p className='mt-[30px] md:absolute md:bottom-1 text-sm text-gray-500 text-center bg-gray-700 py-4 px-8 md:px-[40px] lg:px-[206px]'>
-      Free Research Preview chatGpt may produce inaccurate information about people, places, or facts <br/> <span className='flex space-x-2 gap-3 text-center items-center justify-center'>&copy; CopyRight 2023 <FaGithub  className=' h-6 w-6 text-[#0367a6]'/>David-mwas , <FaGithub className=' h-6 w-6 text-[#0367a6]'/>Fiona Githaiga</span>
+      Free Research Preview TalkGpt may produce inaccurate information about people, places, or facts <br/> <span className='flex space-x-2 gap-3 text-center items-center justify-center'>&copy; CopyRight 2023 <FaGithub  className=' h-6 w-6 text-[#0367a6]'/>David-mwas , <FaGithub className=' h-6 w-6 text-[#0367a6]'/>Fiona Githaiga</span>
     </p>
   
   </div>
