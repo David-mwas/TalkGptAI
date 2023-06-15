@@ -35,6 +35,7 @@ export default async function handler(req, res) {
     .collection("messages")
     .add(message)
 
+    // chat completions response
     res.status(200).json({ answer: message.text });
     console.log(response)
   }

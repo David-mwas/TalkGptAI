@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 import Main from './Main'
 
 function ChatInput({chatId}) {
-   const {text} = useSpeechRecognition();
+   const {text,setText} = useSpeechRecognition();
   const [prompt,setPrompt] = useState();
   // const [textValue,setTextValue] = useState(text);
   const {data:session} = useSession()
@@ -18,11 +18,15 @@ function ChatInput({chatId}) {
  const model = "gpt-3.5-turbo"
   const sendMessage = async (e)=>{
     e.preventDefault();
-    // alert("he")
-    // if (!prompt || !text ) return;
+  
+    if (!prompt ){
+      if (!text)
+      return;
+      };
+    
     const input = prompt?.trim() || text;
     setPrompt("");
-
+    setText("");
     const message = {
       text:input,
       createdAt: serverTimestamp(),

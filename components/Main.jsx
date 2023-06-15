@@ -3,7 +3,7 @@ import { FaMicrophone, FaMicrophoneSlash, } from "react-icons/fa";
 import useSpeechRecognition from '../hooks/useSpeechRecognitionHook'
 function Main() {
     const [toogle, setToogle] = useState(false);
-    const {startListening, stopListening, hasRecognitionSupport } = useSpeechRecognition();
+    const {startListening, stopListening, hasRecognitionSupport,isListening } = useSpeechRecognition();
     const toggleClick = () => {
         setToogle(!toogle)
     }
@@ -18,7 +18,7 @@ function Main() {
                   </div>
                       ): (
                        <div>
-                      <button className='' onClick={stopListening}> <FaMicrophone  className='text-white h-6 w-6 animate-bounce'/></button>
+                      <button className='' onClick={stopListening}> <FaMicrophone  className={`text-white h-6 w-6  ${isListening && "animate-bounce"}`}/></button>
                   </div>   
                      )}
                   

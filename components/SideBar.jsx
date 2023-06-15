@@ -6,19 +6,21 @@ import React from 'react'
 import { useCollection } from 'react-firebase-hooks/firestore';
 import ChatRow from './ChatRow';
 import NewChat from './NewChat'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaArrowCircleLeft, FaBars, FaLongArrowAltLeft, FaTimes } from 'react-icons/fa'
 import { useState } from 'react'
 
 function SideBar() {
   const { data: session } = useSession();
   const [closed, setClosed] = useState(false);
+
+  // fetch chats from firebase firestore
   const [chats, loading, error] = useCollection(
     session && query(
       collection(db, "users", session.user.email, "chats"),
       orderBy("createdAt", "asc")
     )
   )
-  console.log(chats)
+ 
   return (
 
     <div className={`fixed transition-all duration-1000 ease-in-out ${closed ? "left-0":"left-[-100%] "}  md:relative z-50 md:left-0  bg-gray-700 `} >
@@ -44,12 +46,21 @@ function SideBar() {
       </div>
         {session && (
           //https://lh3.googleusercontent.com/a/AGNmyxbQYWTSHXntFKiflGvMlZzlPx0b9jH3A9nob1-ccQ=s96-c
-          <img 
-          onClick={()=>signOut()}
+        <div className='flex flex-col space-y-5 pb-10 items-center'>
+            <img 
           src={session.user?.image}
           alt={`${session.user?.name} google pic`}
           className='h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50 shadow-lg shadow-gray-400'
           />
+          <p className='text-gray-400 text-sm'>{session.user?.name}</p>
+          <button
+          className='flex gap-1 border border-[#141e30] bg-[#141e30] chatRow p-4 mb-4 hover:opacity-75 px-5'
+          onClick={()=>signOut()}
+          >
+            <FaArrowCircleLeft/>
+           <span className='uppercase '> Log Out</span>
+            </button>
+        </div>
         )}
     </div>
     </div>
