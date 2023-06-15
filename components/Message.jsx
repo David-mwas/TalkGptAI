@@ -1,4 +1,3 @@
-import {DocumentData} from "firebase/firestore"
 
 function Message({message}){
     const isChatGPT = message.user.name === "ChatGPT";

@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      scrollbar:{
+        width:'12px',
+        track:'rgba(0,0,0,0.1)',
+        thumb:'rgba(0,0,0,0.5)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -14,5 +19,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }

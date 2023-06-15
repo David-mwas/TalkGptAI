@@ -29,7 +29,7 @@ export default async function RootLayout({ children }) {
         ):(
           <div className='flex'>
           {/* sidebar */}
-                <div className='bg-gray-700 max-w-xs h-[100%]  md:min-w-[15rem]'>
+                <div className='bg-gray-700  h-[100%]  md:min-w-[15rem]'>
                  
                   <SideBar  />
          </div>

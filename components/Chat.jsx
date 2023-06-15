@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import {useSession} from "next-auth/react"
 import { useCollection } from 'react-firebase-hooks/firestore'
 import { collection, orderBy, query } from 'firebase/firestore'
@@ -8,13 +8,21 @@ import Message from  "./Message"
 import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
 
 function Chat({chatId}) {
-  const {data:session} = useSession()
+  const messageEndRef  = useRef(null);
+  const {data:session} = useSession();
   const [messages] = useCollection(session && query(
     collection(db,"users",session.user.email,"chats",chatId,"messages"),
     orderBy("createdAt","asc")
   ))
+
+  useEffect(() => {
+    
+  
+    messageEndRef.current?.scrollIntoView();
+  }, [messages])
+  
   return (
-    <div className='flex-1 overflow-y-auto overflow-x-hidden'>
+    <div className='scrollbar-container flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 overflow-x-hidden'>
     {messages?.empty && (
       <>
       <p className='mt-[55px] text-center text-white space-x-2'>Hey, <span className='text-[#0367a6] font-bold text-sm tracking-wide '> {session.user?.name}</span> type a prompt in below to get started!</p>
@@ -26,6 +34,7 @@ function Chat({chatId}) {
        {messages?.docs.map((message)=>(
         <Message key={message.id} message={message.data()}/>
        ))}
+       <div ref={messageEndRef} />
     </div>
   )
 }
