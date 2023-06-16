@@ -3,11 +3,11 @@ import {BoltIcon, ExclamationTriangleIcon, SunIcon} from '@heroicons/react/24/ou
 import { FaGithub, FaMicrophoneAlt } from 'react-icons/fa'
 export default function Home() {
   return (
-    <div className='flex relative flex-col text-white px-2 justify-center  md:h-screen  overflow-y-auto items-center'>
+    <div className='flex relative flex-col text-white px-2 justify-center  md:h-screen  overflow-y-auto items-center '>
      
     <h1 className='text-5xl flex space-x-2 font-bold mb-5 mt-10 md:mt-0 tracking-[2px]'>TalkGpt<FaMicrophoneAlt className=' animate-bounce text-[#0367a6]'/></h1>
     <p className='mb-10 uppercase text-gray-500 tracking-[5px] text-sm text-center'>Your voice your command</p>
-    <div className='flex flex-col md:flex-row space-x-2 text-center text-sm  overflow-y-autor'> 
+    <div className='flex flex-col md:flex-row space-x-2 text-center text-sm  overflow-y-auto'> 
     
       <div>
         <div className='flex flex-col items-center mb-5'>

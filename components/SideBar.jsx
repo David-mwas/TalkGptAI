@@ -26,7 +26,7 @@ function SideBar() {
     <div className={`fixed transition-all duration-1000 ease-in-out ${closed ? "left-0":"left-[-100%] "}  md:relative z-50 md:left-0  bg-gray-700 min-w-[12rem] md:max-w-[15rem]`} >
        <button
                     onClick={()=>{setClosed(!closed)}}
-        className='md:hidden outline-none shadow-lg text-[#0367a6] hover:opacity-50  top-10 right-4 fixed z-50 transition-all duration-1000 ease-in-out animate-pulse'>
+        className='md:hidden outline-none shadow-lg text-white hover:opacity-50  top-10 right-4 fixed z-50 transition-all duration-1000 ease-in-out animate-pulse bg-[#141e30]'>
         {!closed ? <FaBars className='w-[40px] h-[40px] transition-all duration-1000 ease-in-out'/> : <FaTimes className='w-[40px] h-[40px] transition-all duration-1000 ease-in-out'/>}
                     </button>
       <div className='flex flex-col  h-[100vh] p-2'>
@@ -50,7 +50,7 @@ function SideBar() {
             <img 
           src={session.user?.image}
           alt={`${session.user?.name} google pic`}
-          className='h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50 shadow-lg shadow-gray-400'
+          className='h-12 w-12 rounded-full cursor-pointer mx-auto mb-2 hover:opacity-50 shadow-lg shadow-black'
           />
           <p className='text-gray-400 text-sm'>{session.user?.name}</p>
           <button

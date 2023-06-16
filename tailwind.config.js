@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       scrollbar:{
-        width:'12px',
+        width:'3px',
         track:'rgba(0,0,0,0.1)',
         thumb:'rgba(0,0,0,0.5)',
       },

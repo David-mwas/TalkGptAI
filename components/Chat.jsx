@@ -22,7 +22,7 @@ function Chat({chatId}) {
   }, [messages])
   
   return (
-    <div className='scrollbar-container flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 overflow-x-hidden'>
+    <div className='flex flex-col scrollbar-container flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 overflow-x-hidden items-center'>
     {messages?.empty && (
       <>
       <p className='mt-[55px] text-center text-white space-x-2'>Hey, <span className='text-[#0367a6] font-bold text-sm tracking-wide '> {session.user?.name}</span> type a prompt in below to get started!</p>

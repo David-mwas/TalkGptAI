@@ -1,4 +1,5 @@
 'use client'
+import { ArrowDownCircleIcon } from "@heroicons/react/24/outline"
 import {signIn} from "next-auth/react"
 import Image from 'next/image'
 function Login() {
@@ -11,8 +12,10 @@ function Login() {
         height={300}  
         alt='logo'
         className="animate-pulse rounded-full"
-         />
-         <button className="font-bold text-xl animate-pulse text-white border border-white p-3 rounded-xl"
+      />
+      <p className="text-white mb-3 uppercase">Wanna join the fun, sign in first </p>
+       <ArrowDownCircleIcon className='h-7 w-7 mx-auto mt-2 text-white animate-bounce'/>
+         <button className="font-bold text-xl text-white border border-white p-3 rounded-xl mt-4 bg-[#141e30] uppercase"
          onClick={()=>signIn('google')}
          >Sign In To Use TalkGpt</button>
     </div>
