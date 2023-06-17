@@ -1,4 +1,5 @@
 "use client"
+import useSWR from "swr"
 import { db } from '@/firebase';
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
@@ -8,14 +9,16 @@ import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import Main from './Main'
 
-function ChatInput({chatId}) {
+function ChatInput({ chatId }) {
+  const { data: model, mutate: setModel } = useSWR('model', {
+    fallbackData:'gpt-3.5-turbo'
+  });
    const {text,setText} = useSpeechRecognition();
   const [prompt,setPrompt] = useState();
-  // const [textValue,setTextValue] = useState(text);
-  const {data:session} = useSession()
-  console.log(text)
+
+  const { data: session } = useSession()
+  
 // use swr for models
- const model = "gpt-3.5-turbo"
   const sendMessage = async (e)=>{
     e.preventDefault();
   
@@ -64,7 +67,7 @@ function ChatInput({chatId}) {
     // console.log(input)
   }
   return (
-    <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm ring-none">
+    <div className="bg-gray-700/30 text-gray-400 rounded-lg text-sm ring-none shadow-sm shadow-black">
     
       <form 
         onSubmit={(e) => { e.preventDefault() }}
