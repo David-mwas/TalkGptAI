@@ -23,7 +23,7 @@ function SideBar() {
  
   return (
 
-    <div className={`fixed transition-all duration-1000 ease-in-out ${closed ? "left-0":"left-[-100%] "}  md:relative z-50 md:left-0  bg-gray-700 min-w-[12rem] md:max-w-[15rem]`} >
+    <div className={`fixed transition-all duration-1000 ease-in-out ${closed ? "left-0":"left-[-100%] "}  md:relative z-50 md:left-0  bg-gray-700 min-w-[15rem] md:max-w-[15rem]`} >
        <button
                     onClick={()=>{setClosed(!closed)}}
         className='md:hidden outline-none shadow-lg text-white hover:opacity-50  top-10 right-4 fixed z-50 transition-all duration-1000 ease-in-out animate-pulse bg-[#141e30]'>

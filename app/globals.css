@@ -16,6 +16,7 @@
 body {
   color: black;
   background:red;
+  
 }
 @tailwind base;
 @tailwind components;
