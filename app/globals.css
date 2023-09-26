@@ -1,4 +1,3 @@
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -15,18 +14,17 @@
 
 body {
   color: black;
-  background:red;
-  
+  background: red;
 }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-  .infoText{
-    @apply p-4 bg-gray-700/50 rounded-lg w-[100%]
+@layer components {
+  .infoText {
+    @apply p-4 bg-gray-700/50 rounded-lg w-[100%];
   }
-  .chatRow{
-    @apply rounded-lg  px-5 text-sm flex items-center justify-center space-x-2 hover:bg-[#141e30/4] cursor-pointer text-gray-300 transition-all duration-200 ease-out
+  .chatRow {
+    @apply rounded-lg  px-5 text-sm flex items-center justify-center space-x-2 hover:bg-[#141e30/4] cursor-pointer text-gray-300 transition-all duration-200 ease-out;
   }
 }

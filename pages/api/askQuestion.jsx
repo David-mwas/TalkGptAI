@@ -37,5 +37,5 @@ export default async function handler(req, res) {
 
     // chat completions response
     res.status(200).json({ answer: message.text });
-    console.log(response)
+    // console.log(response)
   }

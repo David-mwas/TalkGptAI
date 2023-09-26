@@ -1,14 +1,20 @@
+"use client";
 import {
   BoltIcon,
   ExclamationTriangleIcon,
   SunIcon,
 } from "@heroicons/react/24/outline";
+
 import { FaGithub, FaMicrophoneAlt } from "react-icons/fa";
+import { connectFirestoreEmulator } from "firebase/firestore";
+import useTypingEffect from "@/hooks/useTypingEffect";
+
 export default function Home() {
+  const title = useTypingEffect("TalkGpt", 70);
   return (
     <div className="flex relative flex-col text-white  justify-center  md:h-screen  overflow-y-auto items-center ">
       <h1 className="text-5xl flex space-x-2 font-bold mb-5 mt-10 md:mt-0 tracking-[2px]">
-        TalkGpt
+        {title}
         <FaMicrophoneAlt className=" animate-bounce text-[#0367a6]" />
       </h1>
       <p className="mb-10 uppercase text-gray-500 tracking-[5px] text-sm text-center">
