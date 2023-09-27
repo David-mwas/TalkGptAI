@@ -56,7 +56,7 @@ function Chat({ chatId }) {
         </>
       )}
       {messages?.docs.map((message) => (
-        <Message key={message.id} message={message.data()} />
+        <Message key={message.id} message={message.data()} Id={message.id} />
       ))}
       <div ref={messageEndRef} />
     </div>

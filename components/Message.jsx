@@ -4,12 +4,12 @@ import { useRef, useState, useEffect } from "react";
 import { FaCopy, FaVolumeUp } from "react-icons/fa";
 import { useSpeechSynthesis } from "react-speech-kit";
 
-function Message({ message }) {
+function Message({ message,Id }) {
   const { speak, speaking, voices, cancel } = useSpeechSynthesis();
   const [copied, setCopied] = useState(false);
   const divRef = useRef(null);
   const isChatGPT = message.user.name === "ChatGPT";
-
+  const current = true;
   const handleCopyClick = () => {
     const textToCopy = divRef?.current.innerText;
     // console.log(textToCopy)
@@ -93,7 +93,9 @@ function Message({ message }) {
             </button>
           )}
           <p className={`pt-1 text-sm ${isChatGPT && "text-gray-100"}`}>
-            {message.text || isChatGPT && useTypingEffect(message.text, 40)}
+            {message.text}
+            {isChatGPT && useTypingEffect(message.text, 10)}
+           
           </p>
         </div>
       </div>
