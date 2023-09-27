@@ -92,7 +92,7 @@ function Message({ message }) {
               />
             </button>
           )}
-          <p className={`pt-1 text-sm ${isChatGPT && "text-gray-900"}`}>
+          <p className={`pt-1 text-sm ${isChatGPT && "text-gray-100"}`}>
             {message.text || isChatGPT && useTypingEffect(message.text, 40)}
           </p>
         </div>
