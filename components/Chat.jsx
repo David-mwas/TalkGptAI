@@ -9,7 +9,6 @@ import { ArrowDownCircleIcon } from "@heroicons/react/24/outline";
 import useTypingEffect from "@/hooks/useTypingEffect";
 
 function Chat({ chatId }) {
-  const [currentMassage, setCurrentMassage] = useState("");
   const text = useTypingEffect("type your prompt below!", 70);
 
   const messageEndRef = useRef(null);

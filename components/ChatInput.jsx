@@ -14,7 +14,7 @@ function ChatInput({ chatId }) {
     fallbackData: "gpt-3.5-turbo",
   });
   const { text, setText } = useSpeechRecognition();
-  const [prompt, setPrompt] = useState();
+  const [prompt, setPrompt] = useState("");
 
   const { data: session } = useSession();
 
@@ -86,7 +86,7 @@ function ChatInput({ chatId }) {
           disabled={!session}
           className="focus:outline-none bg-transparent flex-1 disabled:cursor-not-allowed disabled:text-gray-300"
           value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
+          onChange={(e) => setPrompt(e.target?.value)}
           type="text"
           placeholder="Type your text here..."
         />

@@ -4,7 +4,8 @@ import { useRef, useState, useEffect } from "react";
 import { FaCopy, FaVolumeUp } from "react-icons/fa";
 import { useSpeechSynthesis } from "react-speech-kit";
 
-function Message({ message,Id }) {
+function Message({ message, Id }) {
+  //  const [currentMassage, setCurrentMassage] = useState(message.text);
   const { speak, speaking, voices, cancel } = useSpeechSynthesis();
   const [copied, setCopied] = useState(false);
   const divRef = useRef(null);
@@ -94,8 +95,7 @@ function Message({ message,Id }) {
           )}
           <p className={`pt-1 text-sm ${isChatGPT && "text-gray-100"}`}>
             {message.text}
-            {isChatGPT && useTypingEffect(message.text, 10)}
-           
+            {isChatGPT && Id && useTypingEffect(message.text, 10)}
           </p>
         </div>
       </div>
